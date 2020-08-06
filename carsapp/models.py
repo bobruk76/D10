@@ -36,6 +36,7 @@ class Car(models.Model):
     transmission = models.IntegerField(
         "Коробка", choices=TRANSMISSION_CHOICES, default=TRANSMISSION_AUTOMAT
     )
+    year=models.IntegerField(verbose_name='Год выпуска')
     color = models.CharField(max_length=256, verbose_name='Цвет')
 
     class Meta:

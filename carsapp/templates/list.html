@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Автомашины{% endblock %}
+
+{% block main_content %}
+
+
+  <h1>Список машин</h1>
+  <ul class="list-inline">
+  {% for car in cars %}
+    <li class="list-inline-item">
+      <span class="badge badge-info">{{ car }}</span>
+    </li>
+  {% endfor %}
+  </ul>
+{% endblock %}
