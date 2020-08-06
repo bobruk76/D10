@@ -3,14 +3,16 @@
 
 {% block title %}Автомашины{% endblock %}
 
-{% block main_content %}
-
-
+{% block content %}
   <h1>Список машин</h1>
   <ul class="list-inline">
-  {% for car in cars %}
+  {% for car in object_list %}
     <li class="list-inline-item">
       <span class="badge badge-info">{{ car }}</span>
+    </li>
+  {% empty %}
+    <li class="list-inline-item">
+      Список автомоилей пуст
     </li>
   {% endfor %}
   </ul>

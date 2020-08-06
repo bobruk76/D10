@@ -5,7 +5,6 @@ from carsapp.models import Car
 
 class CarListView(ListView):
     model = Car
-    paginate_by = 100
     template_name = "list.html"
 
     # def get_queryset(self):
