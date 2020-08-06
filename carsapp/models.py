@@ -34,5 +34,13 @@ class Car(models.Model):
     slug = models.SlugField
     manufacturer = models.ForeignKey(Manufacturer, default=None, on_delete=models.DO_NOTHING , verbose_name='Производитель')
     transmission = models.IntegerField(
-        "Приоритет", choices=TRANSMISSION_CHOICES, default=TRANSMISSION_AUTOMAT
+        "Коробка", choices=TRANSMISSION_CHOICES, default=TRANSMISSION_AUTOMAT
     )
+    color = models.CharField(max_length=256, verbose_name='Цвет')
+
+    class Meta:
+        verbose_name = 'Автомобиль'
+        verbose_name_plural = 'Автомобиль'
+
+    def __str__(self):
+        return '{} -- {}'.format(self.model, self.color)
