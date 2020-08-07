@@ -9,17 +9,17 @@
   <h2>Фильтрация</h2>
     <form method="GET">
       {% csrf_token %}
-      {{ form.as_p }}
+      {{ filter.form.as_p }}
       <input type="submit" class="btn btn-success col-4" value="Применить">
     </form>
-  <ul class="list-inline">
-  {% for car in object_list %}
-    <li class="list-inline-item">
-      <span class="badge badge-info">{{ car }}</span>
+  <ul class="list-group">
+  {% for car in filter.qs %}
+    <li class="list-group-item list-group-item-secondary">
+      {{ car }}
     </li>
   {% empty %}
-    <li class="list-inline-item">
-      Список автомоилей пуст
+    <li class="list-group-item list-group-item-dark">
+      Автомобили, удовлетворяющие данному условию, отсутствуют
     </li>
   {% endfor %}
   </ul>

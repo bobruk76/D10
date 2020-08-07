@@ -44,4 +44,5 @@ class Car(models.Model):
         verbose_name_plural = 'Автомобиль'
 
     def __str__(self):
-        return '{} -- {}'.format(self.model, self.color)
+        return '{} {} -- {} -- {}'.format(self.manufacturer,self.model, self.year, self.color)
+
